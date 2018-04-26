@@ -1,12 +1,10 @@
-if (( $# > 1 )); then
-	echo "${@:2} Arguments Ignored"
-fi
+input='nakshatras.txt'
+while IFS= read -r var; 
+do 
+    details=($var)
+	echo "${details[0]},${details[1]} " >> phase1.txt  
+	echo "${details[0]},${details[1]} " >> phase1.txt  
+	echo "${details[0]},${details[1]} " >> phase1.txt  
+	echo "${details[0]},${details[1]} " >> phase1.txt  
+done < $input
 
-file=""
-if [ -n "$1" ]; then
-	file="nakshatras.txt"
-else
-	file="$1"
-fi
-
-cat $file | awk '{ for(i=0; i<4; i++) print }' > phase1.txt
